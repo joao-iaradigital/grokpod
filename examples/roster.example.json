@@ -1,0 +1,90 @@
+{
+ "_note": "room + race per agent id. room must be a key of ROOMS in site/grokpod.js. race = autonomy level: observer (report generator), operator (autopilot), collaborator, consultant, approver (copilots that ask you). Optional: session = substring of a browser cookie key; if it is signed out the agent shows a broken connection. omit=true hides an agent.",
+ "demo-0001": {
+  "room": "WORK",
+  "race": "observer"
+ },
+ "demo-0002": {
+  "room": "WORK",
+  "race": "observer"
+ },
+ "demo-0003": {
+  "room": "WORK",
+  "race": "observer"
+ },
+ "demo-0004": {
+  "room": "WORK",
+  "race": "observer"
+ },
+ "demo-0005": {
+  "room": "WORK",
+  "race": "consultant"
+ },
+ "demo-0006": {
+  "room": "WORK",
+  "race": "approver"
+ },
+ "demo-0007": {
+  "room": "PROJ_A",
+  "race": "operator"
+ },
+ "demo-0008": {
+  "room": "PROJ_A",
+  "race": "approver"
+ },
+ "demo-0009": {
+  "room": "PROJ_B",
+  "race": "consultant"
+ },
+ "demo-0010": {
+  "room": "PROJ_B",
+  "race": "observer"
+ },
+ "demo-0011": {
+  "room": "RESEARCH",
+  "race": "consultant"
+ },
+ "demo-0012": {
+  "room": "RESEARCH",
+  "race": "approver"
+ },
+ "demo-0013": {
+  "room": "HOME",
+  "race": "operator"
+ },
+ "demo-0014": {
+  "room": "HOME",
+  "race": "operator"
+ },
+ "demo-0015": {
+  "room": "HOME",
+  "race": "collaborator"
+ },
+ "demo-0016": {
+  "room": "HOME",
+  "race": "operator",
+  "session": "chat.example.com",
+  "session_reason": "Chat web session signed out; scan the QR again"
+ },
+ "demo-0017": {
+  "room": "LEISURE",
+  "race": "observer"
+ },
+ "demo-0018": {
+  "room": "LEISURE",
+  "race": "collaborator"
+ },
+ "demo-0019": {
+  "room": "HQ",
+  "race": "consultant"
+ },
+ "demo-0020": {
+  "room": "HQ",
+  "race": "observer"
+ },
+ "demo-0021": {
+  "room": "HQ",
+  "race": "collaborator",
+  "omit": true
+ }
+}

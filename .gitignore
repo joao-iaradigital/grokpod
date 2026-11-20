@@ -1,0 +1,27 @@
+# secrets and local state
+.env
+site.json
+site/.herenow/proxy.json
+site/status.json
+# real data (only *.example.* files are committed)
+roster.json
+quick_replies.json
+conn_overrides.json
+router_log.jsonl
+events.json
+events.txt
+score.json
+score.txt
+status.json
+audit.json
+transcripts/
+*.db
+*.db-wal
+*.db-shm
+# build/test leftovers
+node_modules/
+__pycache__/
+*.pyc
+test_*.png
+shot.png
+.DS_Store

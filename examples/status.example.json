@@ -1,0 +1,283 @@
+{
+ "updated_at": "2026-01-05T10:05:00-03:00",
+ "cards_cached_at": "2026-01-05T09:40:00-03:00",
+ "agents": [
+  {
+   "name": "Exec Digest",
+   "room": "WORK",
+   "race": "observer",
+   "needs_you": false,
+   "reason": null,
+   "signal": null,
+   "ask_ts": null,
+   "id": "demo-0001"
+  },
+  {
+   "name": "Market Tracker",
+   "room": "WORK",
+   "race": "observer",
+   "needs_you": false,
+   "reason": null,
+   "signal": null,
+   "ask_ts": null,
+   "id": "demo-0002"
+  },
+  {
+   "name": "Product Tracker",
+   "room": "WORK",
+   "race": "observer",
+   "needs_you": true,
+   "reason": "Asked you a question in chat; no reply yet",
+   "signal": "awaiting_reply",
+   "ask_ts": "2026-01-05T08:10:00-03:00",
+   "id": "demo-0003",
+   "question": "Want me to turn this into a recurring digest?",
+   "quick_replies": [
+    {
+     "label": "Daily",
+     "reply": "Make it a daily digest, every weekday morning."
+    },
+    {
+     "label": "Weekly",
+     "reply": "Make it a weekly digest, every Monday morning."
+    },
+    {
+     "label": "Snooze 1 day",
+     "reply": "Snooze: remind me about this tomorrow.",
+     "snooze": true
+    },
+    {
+     "label": "Never mind",
+     "reply": "Never mind, keep it on demand only."
+    }
+   ],
+   "fallback": null
+  },
+  {
+   "name": "Meeting Notes",
+   "room": "WORK",
+   "race": "observer",
+   "needs_you": false,
+   "reason": null,
+   "signal": null,
+   "ask_ts": null,
+   "id": "demo-0004"
+  },
+  {
+   "name": "Work Planner",
+   "room": "WORK",
+   "race": "consultant",
+   "needs_you": true,
+   "reason": "Asked you a question in chat; no reply yet",
+   "signal": "awaiting_reply",
+   "ask_ts": "2026-01-04T17:30:00-03:00",
+   "id": "demo-0005",
+   "question": "Should I block Thursday afternoon for deep work?",
+   "quick_replies": [],
+   "fallback": "grokbot"
+  },
+  {
+   "name": "Inbox Copilot",
+   "room": "WORK",
+   "race": "approver",
+   "needs_you": true,
+   "reason": "Mail connector asks you to sign in again",
+   "signal": "broken_connection",
+   "ask_ts": "2026-01-02T09:00:00-03:00",
+   "id": "demo-0006",
+   "question": null,
+   "quick_replies": [],
+   "fallback": "grokbot"
+  },
+  {
+   "name": "Ops Autopilot",
+   "room": "PROJ_A",
+   "race": "operator",
+   "needs_you": false,
+   "reason": null,
+   "signal": null,
+   "ask_ts": null,
+   "id": "demo-0007"
+  },
+  {
+   "name": "Outreach Bot",
+   "room": "PROJ_A",
+   "race": "approver",
+   "needs_you": true,
+   "reason": "2 email drafts waiting for your answer/Send",
+   "signal": "open_card",
+   "ask_ts": "2026-01-05T07:45:00-03:00",
+   "id": "demo-0008",
+   "question": "Send the two follow-up emails as drafted?",
+   "quick_replies": [],
+   "fallback": "grokbot"
+  },
+  {
+   "name": "Growth Bot",
+   "room": "PROJ_B",
+   "race": "consultant",
+   "needs_you": true,
+   "reason": "Asked you a question in chat; no reply yet",
+   "signal": "awaiting_reply",
+   "ask_ts": "2026-01-05T09:20:00-03:00",
+   "id": "demo-0009",
+   "question": "Should I run the next growth experiment this week?",
+   "quick_replies": [
+    {
+     "label": "Yes, go",
+     "reply": "Yes, run it this week."
+    },
+    {
+     "label": "Next week",
+     "reply": "Wait until next week."
+    },
+    {
+     "label": "Snooze 1 day",
+     "reply": "Snooze: remind me tomorrow.",
+     "snooze": true
+    }
+   ],
+   "fallback": null
+  },
+  {
+   "name": "Weekly Metrics",
+   "room": "PROJ_B",
+   "race": "observer",
+   "needs_you": false,
+   "reason": null,
+   "signal": null,
+   "ask_ts": null,
+   "id": "demo-0010"
+  },
+  {
+   "name": "Research Bot",
+   "room": "RESEARCH",
+   "race": "consultant",
+   "needs_you": false,
+   "reason": null,
+   "signal": null,
+   "ask_ts": null,
+   "id": "demo-0011"
+  },
+  {
+   "name": "Post Drafter",
+   "room": "RESEARCH",
+   "race": "approver",
+   "needs_you": true,
+   "reason": "1 question card waiting for your answer/Send",
+   "signal": "open_card",
+   "ask_ts": "2026-01-03T11:00:00-03:00",
+   "id": "demo-0012",
+   "question": "Publish the Tuesday post as drafted?",
+   "quick_replies": [],
+   "fallback": "grokbot"
+  },
+  {
+   "name": "Budget Bot",
+   "room": "HOME",
+   "race": "operator",
+   "needs_you": true,
+   "reason": "Asked you a question in chat; no reply yet",
+   "signal": "awaiting_reply",
+   "ask_ts": "2026-01-05T06:50:00-03:00",
+   "id": "demo-0013",
+   "question": "Is this charge from the bookstore yours?",
+   "quick_replies": [
+    {
+     "label": "Yes, mine",
+     "reply": "Yes, that one is mine."
+    },
+    {
+     "label": "No",
+     "reply": "No, I don't recognize it."
+    }
+   ],
+   "fallback": null
+  },
+  {
+   "name": "Shop Autopilot",
+   "room": "HOME",
+   "race": "operator",
+   "needs_you": false,
+   "reason": null,
+   "signal": null,
+   "ask_ts": null,
+   "id": "demo-0014"
+  },
+  {
+   "name": "Errand Bot",
+   "room": "HOME",
+   "race": "collaborator",
+   "needs_you": false,
+   "reason": null,
+   "signal": null,
+   "ask_ts": null,
+   "id": "demo-0015"
+  },
+  {
+   "name": "Chat Relay",
+   "room": "HOME",
+   "race": "operator",
+   "needs_you": true,
+   "reason": "Chat web session signed out; scan the QR again",
+   "signal": "broken_connection",
+   "ask_ts": "2026-01-04T21:10:00-03:00",
+   "id": "demo-0016",
+   "question": null,
+   "quick_replies": [],
+   "fallback": "grokbot"
+  },
+  {
+   "name": "Movie Picks",
+   "room": "LEISURE",
+   "race": "observer",
+   "needs_you": false,
+   "reason": null,
+   "signal": null,
+   "ask_ts": null,
+   "id": "demo-0017"
+  },
+  {
+   "name": "Video Publisher",
+   "room": "LEISURE",
+   "race": "collaborator",
+   "needs_you": true,
+   "reason": "Asked you a question in chat; no reply yet",
+   "signal": "awaiting_reply",
+   "ask_ts": "2026-01-05T09:55:00-03:00",
+   "id": "demo-0018",
+   "question": "Can I delete the first cut of the video?",
+   "quick_replies": [
+    {
+     "label": "Delete it",
+     "reply": "Yes, delete the first cut."
+    },
+    {
+     "label": "Keep it",
+     "reply": "Keep it for now."
+    }
+   ],
+   "fallback": null
+  },
+  {
+   "name": "Command Center",
+   "room": "HQ",
+   "race": "consultant",
+   "needs_you": false,
+   "reason": null,
+   "signal": null,
+   "ask_ts": null,
+   "id": "demo-0019"
+  },
+  {
+   "name": "Agent Guide",
+   "room": "HQ",
+   "race": "observer",
+   "needs_you": false,
+   "reason": null,
+   "signal": null,
+   "ask_ts": null,
+   "id": "demo-0020"
+  }
+ ]
+}

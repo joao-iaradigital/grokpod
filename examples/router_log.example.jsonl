@@ -1,0 +1,2 @@
+{"time": "2026-01-05T10:02:11-03:00", "agent_id": "demo-0010", "agent_name": "Weekly Metrics", "kind": "reply", "question": "Want me to send this every Monday?", "answer": "Yes, every Monday.", "result": "sent"}
+{"time": "2026-01-05T10:03:40-03:00", "agent_id": "demo-0017", "agent_name": "Movie Picks", "kind": "snooze", "answer": null, "result": "sent", "snooze_until": "2026-01-06T10:03:40-03:00"}

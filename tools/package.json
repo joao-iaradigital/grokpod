@@ -1,0 +1,17 @@
+{
+  "name": "grokpod-tools",
+  "version": "1.0.0",
+  "description": "Headless smoke tests and screenshots for the GrokPod dashboard",
+  "scripts": {
+    "shot": "node shot.js",
+    "test:clicks": "node clicks.js",
+    "test:replies": "node toast.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "puppeteer-core": "^23.11.1"
+  }
+}

@@ -1,0 +1,7 @@
+{
+ "_note": "Connection blockers the scripts can't see on their own (reported by you or by another agent). since = when it started (ISO with offset).",
+ "demo-0006": {
+  "reason": "Mail connector asks you to sign in again",
+  "since": "2026-01-05T09:00:00-03:00"
+ }
+}

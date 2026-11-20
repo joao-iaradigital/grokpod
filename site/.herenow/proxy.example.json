@@ -1,0 +1,1 @@
+{"proxies": {"/api/reply": {"upstream": "${GROKPOD_WEBHOOK_URL}", "method": "POST", "headers": {"Authorization": "Bearer ${GROKPOD_WEBHOOK_KEY}"}}}}

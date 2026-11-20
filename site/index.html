@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1b1426">
+<link rel="icon" href="data:,">
+<title>GrokPod</title>
+<style>
+  :root{--ink:#1b1426;--paper:#fff8e7;--red:#d8343c;--gold:#ffd166}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%;background:#120d1b;color:var(--paper);font-family:ui-monospace,Menlo,Consolas,"Courier New",monospace;overflow:hidden;user-select:none}
+  #bar{height:48px;display:flex;align-items:center;gap:14px;padding:0 14px;background:#2a1f3d;border-bottom:4px solid var(--ink);box-shadow:0 2px 0 #4b3a6b inset}
+  #title{font-weight:900;font-size:22px;letter-spacing:2px;color:var(--gold);text-shadow:2px 2px 0 var(--ink)}
+  #needs{font:inherit;font-weight:800;font-size:16px;padding:6px 12px;border:3px solid var(--ink);background:#3c9a5f;color:#fff;box-shadow:3px 3px 0 var(--ink);cursor:pointer}
+  #needs.hot{background:var(--red)}
+  #needs:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+  #spacer{flex:1}
+  #updated{font-size:14px;opacity:.85}
+  #updated.stale{color:#ff9b9b}
+  #fs{font:inherit;font-size:18px;background:none;border:2px solid #6c5a8c;color:var(--paper);padding:2px 8px;cursor:pointer}
+  #stage{position:absolute;top:52px;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center}
+  canvas{image-rendering:pixelated;image-rendering:crisp-edges;display:block;touch-action:manipulation}
+  .scrim{position:fixed;inset:0;background:rgba(10,6,18,.6);display:none;align-items:center;justify-content:center;z-index:10}
+  .scrim.on{display:flex}
+  .win{background:#24305e;border:4px solid var(--paper);outline:4px solid var(--ink);box-shadow:8px 8px 0 rgba(0,0,0,.5);padding:18px 20px;max-width:min(560px,92vw);max-height:84vh;overflow:auto;color:var(--paper);font-size:16px;line-height:1.45}
+  .win h2{margin:0 0 6px;font-size:22px;color:var(--gold)}
+  .win .row{margin:6px 0}
+  .win .k{color:#9fb3ff;display:inline-block;min-width:88px}
+  .win a{color:#8ef0ff;word-break:break-all}
+  .tag{display:inline-block;font-size:12px;padding:1px 6px;border:2px solid #ffb84d;color:#ffb84d;margin-left:6px}
+  .close{font:inherit;font-weight:800;margin-top:14px;padding:6px 14px;border:3px solid var(--ink);background:var(--paper);color:var(--ink);box-shadow:3px 3px 0 var(--ink);cursor:pointer}
+  .li{display:flex;gap:10px;align-items:baseline;padding:8px 6px;border-bottom:2px dashed #4a5a9a;cursor:pointer}
+  .li:hover{background:#2e3c74}
+  .li .b{min-width:62px;font-weight:900;text-align:center}
+  .t0{color:#ffd166}.t1{color:#ff9f43}.t2{color:#ff5c6c}
+  .li .n{font-weight:800}
+  .li .s{opacity:.8;font-size:14px}
+  .muted{opacity:.7;font-size:13px}
+  .q{margin:12px 0 8px;padding:10px 12px;background:#fffbe8;color:var(--ink);border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);font-size:16px}
+  .qr{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}
+  .qb{font:inherit;font-weight:800;font-size:15px;padding:8px 14px;border:3px solid var(--ink);background:var(--gold);color:var(--ink);box-shadow:3px 3px 0 var(--ink);cursor:pointer;min-height:44px}
+  .qb.snz{background:#9fd8ff}
+  .qb:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+  .typed{margin:10px 0}.typed summary{cursor:pointer;color:#9fb3ff}
+  .typed textarea{width:100%;margin:8px 0;font:inherit;font-size:15px;padding:8px;border:3px solid var(--ink);background:#fffbe8;color:var(--ink)}
+  .note{margin:8px 0;padding:6px 10px;border:2px solid #2fae6a;color:#bff5d4}
+  .gbrow{margin-top:12px}
+  .qb:disabled{opacity:.5;cursor:wait}
+  #toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:20;padding:10px 18px;font-weight:900;font-size:18px;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);opacity:0;transition:opacity .2s;pointer-events:none}
+  #toast.on{opacity:1}#toast.ok{background:#3c9a5f;color:#fff}#toast.bad{background:var(--red);color:#fff}
+  .gb{display:inline-block;font-weight:800;padding:6px 12px;border:3px solid #8ef0ff;text-decoration:none}
+</style>
+</head>
+<body>
+<div id="bar">
+  <div id="title">GrokPod</div>
+  <button id="needs" type="button">Needs you: –</button>
+  <div id="spacer"></div>
+  <div id="updated">loading…</div>
+  <button id="fs" type="button" title="Fullscreen">⛶</button>
+</div>
+<div id="stage"><canvas id="c"></canvas></div>
+<div class="scrim" id="modal"><div class="win" id="modalBody"></div></div>
+<div class="scrim" id="list"><div class="win" id="listBody"></div></div>
+<script src="grokpod.js?v=7"></script>
+</body>
+</html>

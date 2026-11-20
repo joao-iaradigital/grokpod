@@ -1,0 +1,46 @@
+{
+ "_doc": "Per-agent quick replies for the GrokPod modal, keyed by agent id. match = substring that must appear in the current pending question, otherwise buttons are dropped as stale. question = optional cleaner display text. buttons: 2-4 {label, reply, snooze?}. fallback 'grokbot' = also offer 'solve it in the app'.",
+ "demo-0003": {
+  "name": "Product Tracker",
+  "match": "recurring digest",
+  "buttons": [
+   {
+    "label": "Daily",
+    "reply": "Make it a daily digest, every weekday morning."
+   },
+   {
+    "label": "Weekly",
+    "reply": "Make it a weekly digest, every Monday morning."
+   },
+   {
+    "label": "Snooze 1 day",
+    "reply": "Snooze: remind me about this tomorrow.",
+    "snooze": true
+   },
+   {
+    "label": "Never mind",
+    "reply": "Never mind, keep it on demand only."
+   }
+  ]
+ },
+ "demo-0009": {
+  "name": "Growth Bot",
+  "match": "experiment",
+  "question": "Should I run the next growth experiment this week?",
+  "buttons": [
+   {
+    "label": "Yes, go",
+    "reply": "Yes, run it this week."
+   },
+   {
+    "label": "Next week",
+    "reply": "Wait until next week."
+   },
+   {
+    "label": "Snooze 1 day",
+    "reply": "Snooze: remind me tomorrow.",
+    "snooze": true
+   }
+  ]
+ }
+}
