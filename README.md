@@ -62,7 +62,9 @@ No accounts or keys needed:
 ./demo.sh pipeline    # builds status.json from a fake message index, then serves it
 ```
 
-![demo](docs/demo.png)
+![demo](docs/grokpod-demo.gif)
+
+Full-size video: [docs/grokpod-demo.mp4](docs/grokpod-demo.mp4)
 
 ## Run it on your own agents
 
